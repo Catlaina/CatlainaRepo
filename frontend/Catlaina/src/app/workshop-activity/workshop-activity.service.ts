@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CloneVisitor } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,11 @@ export class WorkshopActivityService {
 
   getActivity() {
     return this._activity;
+  }
+
+  getActivities() {
+    let activities = [new WorkshopActivity(), new WorkshopActivity(), new WorkshopActivity(), new WorkshopActivity()];
+    return activities;
   }
 }
 
@@ -34,12 +40,12 @@ export class WorkshopActivity{
     this._durationMinutes = value;
   }
   
-  private _agendaDesctiption:string;
-  public get agendaDesctiption() {
-    return this._agendaDesctiption;
+  private _agendaDescription:string;
+  public get agendaDescription() {
+    return this._agendaDescription;
   }
-  public set agendaDesctiption(value) {
-    this._agendaDesctiption = value;
+  public set agendaDescription(value) {
+    this._agendaDescription = value;
   }
 
   private _facilitationNotes:string;
@@ -61,7 +67,7 @@ export class WorkshopActivity{
   constructor() { 
     this._title = "Activity Title";
     this._durationMinutes  = 90;
-    this._agendaDesctiption = "Activity blablabla";
+    this._agendaDescription = "Activity blablabla";
     this._facilitationNotes  = "Lorem Ipsum dolor sit Amet";
     this._requiredMaterial = "2 FlipCharts, 1 Whiteboard, 1 Pinboard";
   } 

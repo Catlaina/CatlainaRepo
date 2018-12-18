@@ -1,0 +1,15 @@
+<p>
+  workshop-activities works!
+</p>
+<div *ngFor = "let activity of activities">
+  Activity: {{activity.title}}
+</div>
+
+<table>
+  <tr *ngFor = "let activity of activities">
+    <td> {{ activity.title }} </td>
+    <td> {{ activity.durationMinutes }} </td>
+    <td> {{ activity.agendaDescription }} </td>
+    <td> {{ activity.facilitationNotes }} </td>
+  </tr>
+</table>

@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkshopActivityComponent } from './workshop-activity/workshop-activity.component';
+import { WorkshopActivitiesComponent } from './workshop-activities/workshop-activities.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WorkshopActivityComponent
+    WorkshopActivityComponent,
+    WorkshopActivitiesComponent
   ],
   imports: [
     BrowserModule,
