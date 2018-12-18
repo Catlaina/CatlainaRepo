@@ -1,18 +1,18 @@
 <div>
-  <h1>Activity Details: {{title}} </h1>
+  <h1>Activity Details: {{activity.title}} </h1>
   <p>
-    Duration: {{duration}}
+    Duration: {{activity.durationMinutes + " minutes"}}
   </p>
   <h2>Agenda Text</h2>
   <p> 
-      {{ agendaDesctiption }} 
+      {{ activity.agendaDesctiption }} 
   </p>
   <h2>Facilitator Notes</h2>
   <p>
-    {{ facilitationNotes }}
+    {{ activity.facilitationNotes }}
   </p>
   <h2>Material</h2>
   <p>
-    {{ requiredMaterial }}
+    {{ activity.requiredMaterial }}
   </p>
 </div>
