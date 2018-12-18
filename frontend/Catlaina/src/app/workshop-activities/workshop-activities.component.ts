@@ -12,11 +12,16 @@ export class WorkshopActivitiesComponent implements OnInit {
 
   constructor(activityServce:WorkshopActivityService) {
     this._activityService = activityServce;
-   }
+  }
 
-   get activities(){
-     return this._activityService.getActivities();
-   }
+  get activities(){
+    return this._activityService.getActivities();
+  }
+
+  onCreateNew($event){
+    $event.stopPropagation();
+    console.log("New button Clicked.", $event);
+  }
 
   ngOnInit() {
   }

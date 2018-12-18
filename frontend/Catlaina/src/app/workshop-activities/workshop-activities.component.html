@@ -1,10 +1,5 @@
-<p>
-  workshop-activities works!
-</p>
-<div *ngFor = "let activity of activities">
-  Activity: {{activity.title}}
-</div>
 
+<h2>Activities List</h2>
 <table>
   <tr *ngFor = "let activity of activities">
     <td> {{ activity.title }} </td>
@@ -13,3 +8,5 @@
     <td> {{ activity.facilitationNotes }} </td>
   </tr>
 </table>
+
+<button (click)="onCreateNew($event)" class="btn btn-primary">New</button>
