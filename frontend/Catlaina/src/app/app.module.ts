@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkshopActivityComponent } from './workshop-activity/workshop-activity.component';
 import { WorkshopActivitiesComponent } from './workshop-activities/workshop-activities.component';
+import { WorkshopComponent } from './workshop/workshop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkshopActivityComponent,
-    WorkshopActivitiesComponent
+    WorkshopActivitiesComponent,
+    WorkshopComponent
   ],
   imports: [
     BrowserModule,

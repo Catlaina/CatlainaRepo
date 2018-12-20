@@ -19,6 +19,7 @@ export class WorkshopActivityComponent implements OnInit {
     this._activitiyService = activityService;
   }
 
+  
   ngOnInit() {
   }
 
