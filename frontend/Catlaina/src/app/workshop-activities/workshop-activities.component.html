@@ -1,6 +1,12 @@
 
 <h2>Activities List</h2>
 <table>
+  <tr>
+    <th> Activity  </th>
+    <th> Duration [Min]</th>
+    <th> Description </th>
+    <th> Facilitation Notes</th>
+  </tr>
   <tr *ngFor = "let activity of activities">
     <td> {{ activity.title }} </td>
     <td> {{ activity.durationMinutes }} </td>
