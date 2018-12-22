@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WorkshopActivityComponent } from './workshop-activity/workshop-activity.component';
 import { WorkshopActivitiesComponent } from './workshop-activities/workshop-activities.component';
 import { WorkshopComponent } from './workshop/workshop.component';
+import { CreateWorkshopComponent } from './create-workshop/create-workshop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkshopActivityComponent,
     WorkshopActivitiesComponent,
-    WorkshopComponent
+    WorkshopComponent,
+    CreateWorkshopComponent
   ],
   imports: [
     BrowserModule,
