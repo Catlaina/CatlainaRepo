@@ -1,27 +1,29 @@
 
-<form action="">
+<form #form="ngForm" (ngSubmit)="submit(form)">
 
   <h2>Create new Workshop</h2>
   
   <div class="form-group">
     <label for="workshopTitle">Worshop Title</label>
-    <input id="workshopTitle" type="text" class="form-control"/>
+    <input required ngModel  name="workshopTitle" #wsTitle="ngModel" id="workshopTitle" type="text" class="form-control"/>
+    <div class="alert alert-danger" *ngIf="wsTitle.invalid && wsTitle.touched">Workshop Title is required.</div>
   </div>
   
   <div class="form-group">
     <label for="startDate">Start Date</label>
-    <input type="date" id="startDate" class="form-control">
+    <input required ngModel #startDate="ngModel" name="startDate" type="date" id="startDate" class="form-control">
+    <div class="alert alert-danger" *ngIf="startDate.invalid && startDate.touched">Start Date is required.</div>
   </div>
   
   <div class="form-group">
     <label for="endDate">End Date</label>
-    <input type="date" id="endDate" class="form-control">
+    <input ngModel name="endDate" type="date" id="endDate" class="form-control">
   </div>
   
   <div class="form-group">
     <label for="location">Location</label>
-    <input type="text" id="endDate" class="form-control">
+    <input ngModel name="location" type="text" id="endDate" class="form-control">
   </div>
   
-  <button class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>

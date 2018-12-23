@@ -12,4 +12,8 @@ export class CreateWorkshopComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit(form){
+    console.log(form);
+  }
+
 }
