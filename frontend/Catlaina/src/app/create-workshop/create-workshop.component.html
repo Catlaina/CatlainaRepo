@@ -14,12 +14,7 @@
     <input required ngModel #startDate="ngModel" name="startDate" type="date" id="startDate" class="form-control">
     <div class="alert alert-danger" *ngIf="startDate.invalid && startDate.touched">Start Date is required.</div>
   </div>
-  
-  <div class="form-group">
-    <label for="endDate">End Date</label>
-    <input ngModel name="endDate" type="date" id="endDate" class="form-control">
-  </div>
-  
+    
   <div class="form-group">
     <label for="location">Location</label>
     <input ngModel name="location" type="text" id="endDate" class="form-control">

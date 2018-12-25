@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkshopService } from '../workshop.service';
+import { Workshop } from '../workshop';
 
 @Component({
   selector: 'app-create-workshop',
@@ -7,14 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateWorkshopComponent implements OnInit {
 
-  
-  constructor() { }
+  private _workshopService: WorkshopService;
+
+  constructor(service:WorkshopService) { 
+    this._workshopService = service;
+  }
 
   ngOnInit() {
   }
 
   submit(form){
-    console.log(form);
+    let workshop:Workshop = new Workshop (0, form.value.workshopTitle, form.value.startDate, form.value.location);
+    this._workshopService.add(workshop);
   }
 
 }

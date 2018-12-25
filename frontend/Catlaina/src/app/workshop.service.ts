@@ -29,4 +29,12 @@ export class WorkshopService {
     console.log("get Workshop called with id: " + id );
     return this._workshops[id];
   }
+
+  add(workshop: Workshop) {
+    console.log("Workshop added: " + workshop);
+    workshop.id = this._workshops.length;
+    this._workshops.push(workshop);
+    console.log ("Workshops now:" + this._workshops) + " ( " + this._workshops.length + "items)";
+  }
+
 }
