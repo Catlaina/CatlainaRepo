@@ -1,9 +1,8 @@
 
 <div>
-  <h2> {{workshopTitle}} </h2>
+  <h2> {{workshop.title}} </h2>
   <p>
-    {{startDate | date:'short' }} - {{endDate | date:'short'}}, {{place}}
+    {{ workshop.date | date:'short' }}, {{workshop.place}}
   </p>
-  <h3>Workshop Plan</h3>
   <app-workshop-activities></app-workshop-activities>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Workshop } from '../workshop'
 
 @Component({
   selector: 'app-workshop',
@@ -7,23 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkshopComponent implements OnInit {
 
-  private _workshopTitle: String = "My Workshop";
+  private _workshop : Workshop;
+  public get workshop(){
+    return this._workshop;
+  }
+
   public get workshopTitle(): String {
-    return this._workshopTitle;
-  }
-  public set workshopTitle(value: String) {
-    this._workshopTitle = value;
+    return this._workshop.title;
   }
 
-
-  private _startDate: Date = new Date(2019, 0, 9) ;
+  private _startDate: Date = new Date(2019, 0, 9);
   public get startDate(): Date {
-    return this._startDate;
+    return this._workshop.date;
   }
-  public set startDate(value: Date) {
-    this._startDate = value;
-  }
-
+  
   private _endDate: Date = new Date(2019, 0, 10);
   public get endDate(): Date {
     return this._endDate;
@@ -32,16 +30,17 @@ export class WorkshopComponent implements OnInit {
     this._endDate = value;
   }
 
-  private _place: string = "Some very nice Place, Somewhere";
   public get place(): string {
-    return this._place;
+    return this._workshop.place;
   }
-  public set place(value: string) {
-    this._place = value;
-  }
-
-
-  constructor() { }
+  
+  constructor() {
+    this._workshop = new Workshop();
+    this._workshop.id = 1;
+    this._workshop.title = "Some Cool Workshop with great Folks";
+    this._workshop.date = new Date(Date.now());
+    this._workshop.place = "Some nice Place, somewhere.";
+   }
 
   ngOnInit() {
   }
