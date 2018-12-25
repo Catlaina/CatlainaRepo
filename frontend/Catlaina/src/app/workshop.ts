@@ -31,4 +31,11 @@ export class Workshop {
     public set place(value: string) {
       this._place = value;
     }
+
+    constructor(id?:number, title?:string, date?:Date, place?:string){
+      this._id = id;
+      this._title = title;
+      this._date = date;
+      this._place = place;
+    }
 }

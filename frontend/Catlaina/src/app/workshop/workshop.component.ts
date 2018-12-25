@@ -18,7 +18,7 @@ export class WorkshopComponent implements OnInit {
     this._workshop.id = 1;
     this._workshop.title = "Some Cool Workshop with great Folks";
     this._workshop.date = new Date(Date.now());
-    this._workshop.place = "Some nice Place, somewhere.";
+    this._workshop.place = "";
    }
 
   ngOnInit() {
