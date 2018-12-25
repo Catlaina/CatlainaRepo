@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Workshop } from '../workshop'
+import { WorkshopService } from '../workshop.service';
 
 @Component({
   selector: 'app-workshop',
@@ -8,20 +9,22 @@ import { Workshop } from '../workshop'
 })
 export class WorkshopComponent implements OnInit {
 
+  private _workshopService:WorkshopService;
+
   private _workshop : Workshop;
   public get workshop(){
     return this._workshop;
   }
   
-  constructor() {
-    this._workshop = new Workshop();
-    this._workshop.id = 1;
-    this._workshop.title = "Some Cool Workshop with great Folks";
-    this._workshop.date = new Date(Date.now());
-    this._workshop.place = "";
-   }
-
-  ngOnInit() {
+  constructor(workshopService: WorkshopService ) {
+    this._workshopService= workshopService;
   }
 
+  ngOnInit() {
+    this.getWorkshop(0);
+  }
+
+  private getWorkshop(id:number){
+    this._workshop = this._workshopService.getWorkshop(id);
+  }
 }

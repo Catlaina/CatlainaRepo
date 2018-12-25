@@ -26,6 +26,7 @@ export class WorkshopService {
   }
 
   getWorkshop(id:number){
+    console.log("get Workshop called with id: " + id );
     return this._workshops[id];
   }
 }
