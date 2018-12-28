@@ -24,7 +24,8 @@ export class WorkshopComponent implements OnInit {
     this.getWorkshop(0);
   }
 
-  private getWorkshop(id:number){
-    this._workshop = this._workshopService.getWorkshop(id);
+  private getWorkshop(id:number):void {
+    this._workshopService.getWorkshop(id).subscribe(workshop => this._workshop=workshop);
+    // this._workshop = this._workshopService.getWorkshop(id);>
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Workshop } from './workshop';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +22,13 @@ export class WorkshopService {
 
   constructor() { }
 
-  getWorkshops(): Workshop[] {
-    return this._workshops; 
+  getWorkshops(): Observable<Workshop[]> {
+    return of(this._workshops); 
   }
 
-  getWorkshop(id:number){
+  getWorkshop(id:number): Observable<Workshop>{
     console.log("get Workshop called with id: " + id );
-    return this._workshops[id];
+    return of(this._workshops[id]);
   }
 
   add(workshop: Workshop) {
