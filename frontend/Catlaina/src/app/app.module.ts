@@ -9,6 +9,7 @@ import { WorkshopActivityComponent } from './workshop-activity/workshop-activity
 import { WorkshopActivitiesComponent } from './workshop-activities/workshop-activities.component';
 import { WorkshopComponent } from './workshop/workshop.component';
 import { CreateWorkshopComponent } from './create-workshop/create-workshop.component';
+import { WorkshopListComponent } from './workshop-list/workshop-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CreateWorkshopComponent } from './create-workshop/create-workshop.compo
     WorkshopActivitiesComponent,
     WorkshopComponent,
     CreateWorkshopComponent,
+    WorkshopListComponent,
   ],
   imports: [
     BrowserModule,

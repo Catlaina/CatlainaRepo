@@ -1,9 +1,14 @@
-<h1>{{title}}</h1>
+<nav class="navbar navbar-expand-lg">
+    <div class="nav-item">
+      <a class="nav-link" routerLink="/workshops">Workshops</a>
+    </div>
+    <div class="nav-item">
+        <a class="nav-link" routerLink="/createWorkshop">Create Workshop</a>
+    </div>  
+  </nav>
+  
+  <h1>{{title}}</h1>
 
-<nav>
-  <a routerLink="/workshop">Workshop</a>
-  <a routerLink="/createWorkshop">Create Workshop</a>
-</nav>
 
 <router-outlet></router-outlet>
 <!-- 

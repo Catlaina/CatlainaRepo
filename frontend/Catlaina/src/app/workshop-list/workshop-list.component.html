@@ -1,0 +1,16 @@
+<h2>My Workshops</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Place</th>
+  </tr>
+  <tr *ngFor="let workshop of _workshops">
+    <td>{{workshop.id}}</td>
+    <td><a routerLink="/workshop">{{workshop.title}}</a></td>
+    <td> {{workshop.date | date:'short'}} </td>
+    <td> {{workshop.place}} </td>
+  </tr>
+</table>
