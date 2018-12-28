@@ -28,7 +28,7 @@ export class WorkshopService {
   
   getWorkshop(id:number): Observable<Workshop>{
     console.log("get Workshop called with id: " + id );
-    return of(this._workshops[id]);
+    return of(this._workshops.find(workshop => workshop.id == id));
   }
 
   add(workshop: Workshop) {

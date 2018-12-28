@@ -5,10 +5,10 @@ import { CreateWorkshopComponent } from './create-workshop/create-workshop.compo
 import { WorkshopListComponent } from './workshop-list/workshop-list.component';
 
 const routes: Routes = [
+  {path: "", redirectTo:"workshops", pathMatch:'full'},
   {path: "workshops", component: WorkshopListComponent},
-  {path: "workshop", component: WorkshopComponent},
-  {path: "createWorkshop", component: CreateWorkshopComponent},
-  {path: "", redirectTo:"workshops", pathMatch:'full'}
+  {path: "workshop/:id", component: WorkshopComponent},
+  {path: "createWorkshop", component: CreateWorkshopComponent}
 ];
 
 @NgModule({
