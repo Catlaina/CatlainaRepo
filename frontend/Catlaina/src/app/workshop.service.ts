@@ -25,7 +25,7 @@ export class WorkshopService {
   getWorkshops(): Observable<Workshop[]> {
     return of(this._workshops); 
   }
-
+  
   getWorkshop(id:number): Observable<Workshop>{
     console.log("get Workshop called with id: " + id );
     return of(this._workshops[id]);
