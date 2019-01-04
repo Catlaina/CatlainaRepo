@@ -28,5 +28,4 @@ export class InMemoryDataService implements InMemoryDbService {
     return workshops.length > 0 ? Math.max(...workshops.map(workshop => workshop.id)) + 1 : 0;
   }
 
-  constructor() { }
 }

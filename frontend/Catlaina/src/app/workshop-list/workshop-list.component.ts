@@ -8,18 +8,23 @@ import { Workshop } from '../workshop';
   styleUrls: ['./workshop-list.component.css']
 })
 export class WorkshopListComponent implements OnInit {
-  
-  private _workshopService:WorkshopService;
+
+  private _workshopService: WorkshopService;
 
   private _workshops: Workshop[];
 
-  constructor(service:WorkshopService) { 
+  constructor(service: WorkshopService) {
     this._workshopService = service;
   }
 
 
   ngOnInit() {
-    this._workshopService.getWorkshops().subscribe(ws => this._workshops = ws);
+    this._workshopService.getWorkshops().subscribe(workshops => { 
+      this._workshops = workshops; 
+      // console.log("subscribed: "); 
+      // console.log(workshops) 
+    });
+    // console.log("WorkshopList: stored _workshop:"); console.log(this._workshops);
   }
 
 }

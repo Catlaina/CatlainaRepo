@@ -26,10 +26,10 @@ import { WorkshopListComponent } from './workshop-list/workshop-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation:false})
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation:false}),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
