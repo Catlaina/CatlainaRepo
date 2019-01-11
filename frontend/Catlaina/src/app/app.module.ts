@@ -28,7 +28,7 @@ import { WorkshopListComponent } from './workshop-list/workshop-list.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation:false}),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation:false}),
     AppRoutingModule
   ],
   providers: [],

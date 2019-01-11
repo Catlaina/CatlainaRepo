@@ -1,10 +1,10 @@
 export class Workshop {
     
-    private _id: number;
-    public get id(): number {
+    private _id: String;
+    public get id(): String {
         return this._id;
     }
-    public set id(value: number) {
+    public set id(value: String) {
         this._id = value;
     }
 
@@ -32,7 +32,7 @@ export class Workshop {
       this._place = value;
     }
 
-    constructor(id?:number, title?:string, date?:Date, place?:string){
+    constructor(id?:string, title?:string, date?:Date, place?:string){
       this._id = id;
       this._title = title;
       this._date = date;

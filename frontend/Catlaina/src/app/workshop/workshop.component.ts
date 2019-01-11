@@ -33,7 +33,7 @@ export class WorkshopComponent implements OnInit {
   }
 
   private getWorkshop():void {
-    const id = +this._route.snapshot.paramMap.get('id');
+    const id = this._route.snapshot.paramMap.get('id');
     this._workshopService.getWorkshop(id).subscribe(workshop => this._workshop=workshop);
   }
 }
