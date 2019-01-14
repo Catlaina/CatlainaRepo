@@ -18,7 +18,7 @@ exports.getWorkshops = async function(req, res, next){
     var limit = req.query.limit ? req.query.limit : 50; 
 
     try{
-    
+        writeLog("Getting workshop list")
         var workshops = await WorkshopService.getWorkshops({}, page, limit)
         
         // Return the workshop list with the appropriate HTTP Status Code and Message.
@@ -37,7 +37,7 @@ exports.getWorkshops = async function(req, res, next){
 exports.createWorkshop = async function(req, res, next){
 
     // Req.Body contains the form submit values.
-
+    writeLog("Storing a new workshop");
     console.log(req.body);
 
     var workshop = {
@@ -105,4 +105,8 @@ exports.removeWorkshop = async function(req, res, next){
         return res.status(400).json({status: 400, message: e.message})
     }
 
+}
+
+function writeLog(message){
+    console.log("WorkshopController says: " + message);
 }
