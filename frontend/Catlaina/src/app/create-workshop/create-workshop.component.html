@@ -5,7 +5,7 @@
   
   <div class="form-group">
     <label for="workshopTitle">Worshop Title</label>
-    <input required ngModel  name="workshopTitle" #wsTitle="ngModel" id="workshopTitle" type="text" class="form-control"/>
+    <input required ngModel  name="workshopTitle" #wsTitle="ngModel" id="workshopTitle" type="text" class="form-control" placeholder="Title"/>
     <div class="alert alert-danger" *ngIf="wsTitle.invalid && wsTitle.touched">Workshop Title is required.</div>
   </div>
   
@@ -17,8 +17,9 @@
     
   <div class="form-group">
     <label for="location">Location</label>
-    <input ngModel name="location" type="text" id="endDate" class="form-control">
+    <input ngModel name="location" type="text" id="endDate" class="form-control" placeholder="Location">
   </div>
   
   <button class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>
+
