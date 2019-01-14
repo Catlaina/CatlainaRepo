@@ -20,7 +20,9 @@ export class CreateWorkshopComponent implements OnInit {
 
   submit(form){
     let workshop:Workshop = new Workshop ('', form.value.workshopTitle, form.value.startDate, form.value.location);
-    this._workshopService.add(workshop);
+    console.log(workshop);
+    console.log("WorkshopComponent: Sending Workhsop to workshopService.createWorkshop()");
+    this._workshopService.createWorkshop(workshop);
   }
 
 }

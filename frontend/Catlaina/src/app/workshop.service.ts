@@ -31,30 +31,34 @@ export class WorkshopService {
     
   getWorkshops(): Observable<Workshop[]> {
     console.log("fetching workshops from httpClient");
-    return this.httpClient.get<Workshop[]>(this.workshopUrl)
+    let ws =  this.httpClient.get<Workshop[]>(this.workshopUrl)
       .pipe(
         map(res => {
           return res["data"].docs as Workshop[];
         }),
-        tap(_ =>  console.log('Workshop Service: fetched heroes')),
+        tap(_ =>  console.log('Workshop Service: fetched workshops')),
         catchError(this.handleError('getWorkshops', []))
       );
-    // console.log("Got workshops from HttpClient: ");
-    // console.log(ws);
-    // return ws;
+    console.log("Got workshops from HttpClient: ");
+    console.log(ws);
+    return ws;
   }
 
   getWorkshop(id: String): Observable<Workshop> {
     console.log("get Workshop called with id: " + id);
-    return of(this._workshops.find(workshop => workshop.id == id));
+    return of(this._workshops.find(workshop => workshop._id == id));
   }
 
-  add(workshop: Workshop) {
-    console.log("Workshop added: " + workshop);
-    workshop.id = this._workshops.length.toString();
-    this._workshops.push(workshop);
-    console.log("Workshops now:" + this._workshops) + " ( " + this._workshops.length + "items)";
+  createWorkshop(workshop: Workshop) {
+    console.log("WorkshopService: Creating workshop: ")
+    console.log(workshop);
+    let savedWorkshop = this.httpClient.post(`${this.workshopUrl}`, workshop);
+    console.log("WorkshopService: Saved Workshop:");
+    console.log(savedWorkshop);
+    return savedWorkshop;
   }
+
+
 
   /**
  * Handle Http operation that failed.

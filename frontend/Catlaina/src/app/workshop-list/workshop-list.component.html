@@ -8,7 +8,7 @@
     <th>Place</th>
   </tr>
   <tr *ngFor="let workshop of _workshops">
-    <td>{{workshop.id}}</td>
+    <td>{{workshop._id}}</td>
     <td><a routerLink="/workshop/{{workshop.id}}">{{workshop.title}}</a></td>
     <td> {{workshop.date | date:'short'}} </td>
     <td> {{workshop.place}} </td>

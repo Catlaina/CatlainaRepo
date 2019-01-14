@@ -21,10 +21,7 @@ export class WorkshopListComponent implements OnInit {
   ngOnInit() {
     this._workshopService.getWorkshops().subscribe(workshops => { 
       this._workshops = workshops; 
-      // console.log("subscribed: "); 
-      // console.log(workshops) 
     });
-    // console.log("WorkshopList: stored _workshop:"); console.log(this._workshops);
-  }
+  } 
 
 }

@@ -1,11 +1,11 @@
 export class Workshop {
     
-    private _id: String;
-    public get id(): String {
-        return this._id;
+    private __id: string;
+    public get _id(): string {
+        return this.__id;
     }
-    public set id(value: String) {
-        this._id = value;
+    public set _id(value: string) {
+        this.__id = value;
     }
 
     private _title: String;
@@ -33,7 +33,7 @@ export class Workshop {
     }
 
     constructor(id?:string, title?:string, date?:Date, place?:string){
-      this._id = id;
+      this.__id = id;
       this._title = title;
       this._date = date;
       this._place = place;
